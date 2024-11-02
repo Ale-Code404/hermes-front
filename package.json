@@ -12,6 +12,7 @@
     "deploy": "railway up"
   },
   "dependencies": {
+    "@github/relative-time-element": "^4.4.3",
     "primevue": "^4.2.0",
     "tailwindcss-primeui": "^0.3.4",
     "vue": "^3.5.11",

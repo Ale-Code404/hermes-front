@@ -6,14 +6,20 @@ import InputText from 'primevue/inputtext'
 import Button from 'primevue/button'
 
 const router = useRouter()
+const props = defineProps({
+  code: {
+    type: String,
+    default: null,
+  },
+})
 
 const form = ref({
-  code: null,
+  code: props.code,
 })
 
 function handleSubmit() {
   router.push({
-    name: 'diploma.details',
+    name: 'landing.diploma.details',
     params: {
       code: form.value.code,
     },
@@ -30,7 +36,12 @@ function handleSubmit() {
       v-model="form.code"
     />
 
-    <Button class="dark:text-white" label="Cancelar" :disabled="!form.code">
+    <Button
+      type="submit"
+      class="dark:text-white"
+      label="Cancelar"
+      :disabled="!form.code"
+    >
       Verificar
     </Button>
   </form>

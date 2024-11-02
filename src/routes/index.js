@@ -7,19 +7,24 @@ const router = createRouter({
     {
       path: '/',
       name: 'landing',
-      component: () => import('@/views/landing/Index.vue'),
+      component: () => import('@/views/layouts/Landing.vue'),
       children: [
+        {
+          path: '',
+          name: 'landing.index',
+          component: () => import('@/views/landing/Index.vue'),
+        },
         {
           path: 'verify/:code',
           name: 'landing.diploma.details',
-          component: () => import('@/views/diploma/search/Details.vue')
-        }
-      ]
+          component: () => import('@/views/landing/diploma/SearchDetails.vue'),
+        },
+      ],
     },
     {
       path: '/auth/login',
       name: 'auth.login',
-      component: () => import('@/views/auth/Login.vue')
+      component: () => import('@/views/auth/Login.vue'),
     },
     {
       path: '/app',
@@ -28,12 +33,12 @@ const router = createRouter({
         {
           path: 'dashboard',
           name: 'app.dashboard',
-          component: () => import('@/views/app/dashboard/Index.vue')
-        }
-      ]
+          component: () => import('@/views/app/dashboard/Index.vue'),
+        },
+      ],
     },
-    { path: '/:pathMatch(.*)', component: PageNotFound }
-  ]
+    { path: '/:pathMatch(.*)', component: PageNotFound },
+  ],
 })
 
 export default router

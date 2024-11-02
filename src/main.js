@@ -1,7 +1,7 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './routes'
-import PrimeVue from 'primevue/config';
+import PrimeVue from 'primevue/config'
 // Styles
 import './assets/main.css'
 import './assets/base.css'
@@ -9,7 +9,7 @@ import './assets/base.css'
 const app = createApp(App)
 
 app.use(router).use(PrimeVue, {
-    theme: 'none'
+  theme: 'none',
 })
 
 app.mount('#app')
